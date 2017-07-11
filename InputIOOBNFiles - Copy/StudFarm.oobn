@@ -1,0 +1,154 @@
+class StudFarm
+{
+    inputs = ();
+    outputs = ();
+    node_size = (80 40);
+    HR_DBN_Num_Slices = "5";
+    HR_OOBN_CheckConsistency = "1";
+    HR_OOBN_FitExpand = "1";
+    HR_Utility_Link = "63";
+    HR_Probabilistic_Link = "63";
+    HR_Functional_Link = "63";
+    HR_Binding_Link = "63";
+    HR_Information_Arc = "63";
+    HR_Color_DiscreteFunction = "5";
+    HR_Color_Function = "4";
+    HR_Monitor_Utility_Arrange = "0";
+    HR_Monitor_Mean_Variance = "1";
+    HR_Monitor_Chance_Utility = "1";
+    HR_Compile_MaxMinimalSeparators = "100000";
+    HR_Compile_SaveToMemory = "0";
+    HR_Grid_X = "40";
+    HR_Grid_Y = "40";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_GridShow = "0";
+    HR_Font_Name = "Arial";
+    HR_Font_Size = "-12";
+    HR_Font_Weight = "400";
+    HR_Font_Italic = "0";
+    HR_Propagate_Auto = "1";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_AutoNormal = "1";
+    HR_Compile_TriangMethod = "0";
+    HR_Compile_Compress = "1";
+    HR_Compile_Approximate = "0";
+    HR_Compile_ApproxEpsilon = "1.0E-5";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_InitSD = "2";
+    HR_Color_DiscreteChance = "16";
+    HR_Color_ContinuousChance = "48";
+    HR_Color_Decision = "17";
+    HR_Color_Utility = "36";
+    HR_Color_Instance = "0";
+    HR_Color_Interface = "21";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Groups_GroupNames = "";
+    HR_Groups_GroupColors = "";
+    HR_Zoom_ZoomFactor = "81";
+    HR_Desc = "This network represents a pedigree for 10 horses.  Each node in the network is an instance of the network class Horse.  Thus in the StudFarm network we haven't specified any probabilities at all!  Each node represents the conditional probability distribution over the genotypes aa, aA, and AA, which is identical for all horses.\n\nNote that a much more natural and compact display of the network can be obtained by collapsing each instance node to a single chance node representing the output node of the instance.  A facility for collapsing (and expanding) instance nodes will be implemented in Hugin 6.0.\n\nThe example is taken from Finn V. Jensen's book Bayesian Networks and Decision graphs, Springer, 2001.  ";
+
+    instance Cecily : Horse (; Cecily_offspring = offspring)
+    {
+	label = "";
+	position = (801 105);
+	HR_isCollapsed = "false";
+	HR_LinkGroupInstance = "[Cecily_offspring;Eric_mare:-2]";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.  The input nodes of this instance are unbound, meaning that default potentials are used for these nodes (see Horse network).";
+    }
+
+    instance John : Horse (mare = Irene_offspring, sire = Henry_offspring; John_offspring = offspring)
+    {
+	label = "";
+	position = (600 880);
+	HR_Input_Order = "sire\tmare\t";
+	HR_isCollapsed = "false";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.  In the example described at p. 46 in Finn V. Jensen's book, this node represents the sick animal.  Instantiating this node (or rather it's output) to 'aa' and propagating this evidence computes the probabilities for the remaining 9 horses to be carriers of the disease (i.e., have genotype aA).";
+    }
+
+    instance Henry : Horse (mare = Dorothy_offspring, sire = Fred_offspring; Henry_offspring = offspring)
+    {
+	label = "";
+	position = (359 679);
+	HR_Input_Order = "sire\tmare\t";
+	HR_isCollapsed = "false";
+	HR_LinkGroupInstance = "[Henry_offspring;John_sire:-2]";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.  Henry is the father of the sick horse, John, and might possibly be carrier of the disease gene (i.e., aA)";
+    }
+
+    instance Irene : Horse (mare = Gwenn_offspring, sire = Eric_offspring; Irene_offspring = offspring)
+    {
+	label = "";
+	position = (1000 680);
+	HR_isCollapsed = "false";
+	HR_LinkGroupInstance = "[Irene_offspring;John_mare:-2]";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.  Irene is the mother of the sick horse, John, and might possibly be carrier of the disease gene (i.e., aA)";
+    }
+
+    instance Gwenn : Horse (mare = Ann_offspring; Gwenn_offspring = offspring)
+    {
+	label = "";
+	position = (760 440);
+	HR_isCollapsed = "false";
+	HR_LinkGroupInstance = "[Gwenn_offspring;Irene_mare:-2]";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.  The sire of Gwenn is unknown.";
+    }
+
+    instance Eric : Horse (mare = Cecily_offspring, sire = Brian_offspring; Eric_offspring = offspring)
+    {
+	label = "";
+	position = (1040 440);
+	HR_Input_Order = "sire\tmare\t";
+	HR_isCollapsed = "false";
+	HR_LinkGroupInstance = "[Eric_offspring;Irene_sire:-2]";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.";
+    }
+
+    instance Fred : Horse (mare = Ann_offspring; Fred_offspring = offspring)
+    {
+	label = "";
+	position = (140 265);
+	HR_isCollapsed = "false";
+	HR_LinkGroupInstance = "[Fred_offspring;Henry_sire:-2]";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.  The sire of Fred is unknown.";
+    }
+
+    instance Brian : Horse (; Brian_offspring = offspring)
+    {
+	label = "";
+	position = (521 105);
+	HR_isCollapsed = "false";
+	HR_LinkGroupInstance = "[Brian_offspring;Eric_sire:-2][Brian_offspring;Dorothy_sire:-2]";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.  The input nodes of this instance are unbound, meaning that default potentials are used for these nodes (see Horse network).";
+    }
+
+    instance Dorothy : Horse (mare = Ann_offspring, sire = Brian_offspring; Dorothy_offspring = offspring)
+    {
+	label = "";
+	position = (514 430);
+	HR_isCollapsed = "false";
+	HR_LinkGroupInstance = "[Dorothy_offspring;Henry_mare:-2]";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.";
+    }
+
+    instance Ann : Horse (; Ann_offspring = offspring)
+    {
+	label = "";
+	position = (236 105);
+	HR_isCollapsed = "false";
+	HR_LinkGroupInstance = "[Ann_offspring;Gwenn_mare:-2][Ann_offspring;Fred_mare:-2][Ann_offspring;Dorothy_mare:-2]";
+	HR_Grp = "";
+	HR_Desc = "This node (like all the other nodes) is an instance of the network class Horse.  The input nodes of this instance are unbound, meaning that default potentials are used for these nodes (see Horse network).";
+    }
+} % class StudFarm1

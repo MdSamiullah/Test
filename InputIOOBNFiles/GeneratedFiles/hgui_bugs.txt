@@ -1,0 +1,211 @@
+============================================================
+=================  BUG REPORT FOR HUGIN ====================
+= BUILD CONFIGURATION: 8.4, hgui64_84 (8402)
+= API: HUGIN 8.4 (x64) / HUGIN 8.4 (x64)
+= HGAPI binary: C:\Program Files\Hugin Expert\Hugin Dist 8.4 (x64)\Bin\hgapi84-64.dll
+= HGAPI binary MD5: f489e7c50a9fd64f418ff43b40a28647
+============================================================
+============================================================
+
+============================================================
+========== SUMMARY OF PREVIOUS ERRORS IN SESSION ===========
+============================================================
+No critical errors observed previously.
+No out of memory errors observed previously.
+Past Bug Reports:         0
+Past Critical Errors:     0
+Past non-critical Errors: 0
+Past out of memory Errors: 0
+============================================================
+
+============================================================
+====================== FRAME  TITLES =======================
+============================================================
+list of HuginNetworkFrames (not including DataFrames or modal dialogs):
+selected network frame: null
+============================================================
+
+Discovered by Sami <msam34@student.monash.edu> on Sun Feb 19 12:24:47 AEDT 2017
+
+============================================================
+===================  License information  ==================
+============================================================
+
+Registered User: 2-user
+Registered Company: Monash
+License Type: Hugin Researcher
+
+============================================================
+===================  Keywords, Summary  ====================
+============================================================
+
+
+
+============================================================
+===================  Description of bug  ===================
+============================================================
+
+Object Not Alive Exception (stack trace written in report)
+
+============================================================
+=================  Description of actions  =================
+============================================================
+
+
+
+============================================================
+======================  Stack trace  =======================
+============================================================
+
+COM.hugin.HAPI.ExceptionObjectNotAlive: Object Not Alive Exception
+	at COM.hugin.HAPI.Node.thisPeer(Node.java:626)
+	at COM.hugin.HAPI.DiscreteNode.getNumberOfStates(DiscreteNode.java:222)
+	at COM.hugin.HGUI.DiscreteNodeTableModel.getRowCount(DiscreteNodeTableModel.java:288)
+	at javax.swing.JTable.getRowCount(Unknown Source)
+	at javax.swing.plaf.basic.BasicTableUI.getAdjustedLead(Unknown Source)
+	at javax.swing.plaf.basic.BasicTableUI.getAdjustedLead(Unknown Source)
+	at javax.swing.plaf.basic.BasicTableUI.access$100(Unknown Source)
+	at javax.swing.plaf.basic.BasicTableUI$Handler.repaintLeadCell(Unknown Source)
+	at javax.swing.plaf.basic.BasicTableUI$Handler.focusLost(Unknown Source)
+	at java.awt.AWTEventMulticaster.focusLost(Unknown Source)
+	at java.awt.Component.processFocusEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.KeyboardFocusManager.redispatchEvent(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Unknown Source)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.awt.EventQueue$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at COM.hugin.HGUI.WaitCursorEventQueue.dispatchEvent(WaitCursorEventQueue.java:58)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+
+##################################################
+             COM.hugin.HAPI.Class listing
+##################################################
+--------------------------------------------------
+          Selected node listing 
+--------------------------------------------------
+java.lang.NullPointerException
+Error... Selected node not alive!!
+
+============================================================
+======================  debug/info.txt  ====================
+============================================================
+
+DEBUG INFO GENERATED AT MAKE TIME
+=================================
+Build date: Tue Nov 15 13:57:35 CET 2016
+Build system: Linux ubuntu 2.6.38-16-server #67-Ubuntu SMP Thu Sep 6 18:15:24 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
+Make flags: W=64
+Pwd: /hugin/users/martin/Src/Java/HGUI/GUI/releases/8.4
+Subversion status:
+svn status src -u | grep "? " -v
+[status]  [revision]  [revision + user] [file]
+Status against revision:    907
+
+===================  END OF BUG REPORT  ====================
+
+
+============================================================
+========= Latest user actions prior to error ===============
+0:00:00 [KEYS]   keys pressed
+0:00:00 [MOUSE]  click [class COM.hugin.HGUI.NetworkPanel]
+0:00:01 [KEYS]   keys pressed
+0:00:01 [KEYS]   keys pressed
+0:00:02 [MOUSE]  click [class COM.hugin.HGUI.NetworkPanel]
+0:00:02 [KEYS]   keys pressed
+0:00:03 [MOUSE]  click [class COM.hugin.HGUI.NetworkPanel]
+0:00:03 [KEYS]   keys pressed
+0:00:04 [MOUSE]  click [class COM.hugin.HGUI.NetworkPanel]
+0:00:04 [KEYS]   keys pressed
+0:00:07 [MOUSE]  click [class COM.hugin.HGUI.NetworkPanel]
+0:00:07 [KEYS]   keys pressed
+0:00:09 [MOUSE]  click [class COM.hugin.HGUI.NetworkPanel]
+0:00:09 [KEYS]   keys pressed
+0:00:11 [MOUSE]  click [class COM.hugin.HGUI.NetworkPanel]
+0:00:24 [MOUSE]  click tabbed pane 'Food'
+0:00:26 [MOUSE]  click tabbed pane 'Locale'
+0:00:29 [MOUSE]  click tabbed pane 'Food'
+0:00:31 [MOUSE]  click tabbed pane 'Sex'
+0:00:33 [MOUSE]  click tabbed pane 'Metabolism'
+0:00:38 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:00:40 [MOUSE]  click [a text-field]
+0:00:57 [MOUSE]  click [a text-field]
+0:00:58 [KEYS]   keys pressed
+0:01:00 [KEYS]   keys pressed
+0:01:07 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:01:08 [MOUSE]  click [a text-field]
+0:01:09 [KEYS]   keys pressed
+0:01:11 [KEYS]   keys pressed
+0:01:21 [USAGE]  Network saved in file C:\Users\msamiull\workspace\NETPlusPlus\InputIOOBNFiles\GeneratedFiles\MilkMeatCow.oobn
+0:01:27 [MOUSE]  click tabbed pane 'Sex'
+0:01:28 [MOUSE]  click tabbed pane 'Locale'
+0:01:29 [MOUSE]  click tabbed pane 'Food'
+0:01:30 [MOUSE]  click tabbed pane 'Locale'
+0:01:31 [MOUSE]  click tabbed pane 'Sex'
+0:01:32 [MOUSE]  click tabbed pane 'Metabolism'
+0:01:37 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:01:41 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:01:42 [MOUSE]  click [a text-field]
+0:02:03 [KEYS]   keys pressed
+0:02:03 [KEYS]   keys pressed
+0:02:11 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:02:12 [MOUSE]  click [a text-field]
+0:02:13 [KEYS]   keys pressed
+0:02:16 [KEYS]   keys pressed
+0:02:19 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:02:19 [MOUSE]  click [a text-field]
+0:02:20 [MOUSE]  click [a text-field]
+0:02:20 [MOUSE]  click [a text-field]
+0:02:23 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:02:23 [MOUSE]  click [a text-field]
+0:02:23 [MOUSE]  click [a text-field]
+0:02:24 [KEYS]   keys pressed
+0:02:27 [USAGE]  Network saved in file C:\Users\msamiull\workspace\NETPlusPlus\InputIOOBNFiles\GeneratedFiles\MilkMeatCow.oobn
+0:02:31 [MOUSE]  click tabbed pane 'Meat'
+0:02:34 [MOUSE]  click tabbed pane 'Milk'
+0:02:42 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:02:47 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:02:47 [MOUSE]  click [a text-field]
+0:02:49 [KEYS]   keys pressed
+0:03:06 [MOUSE]  click [class COM.hugin.HGUI.BarNodeTable]
+0:03:07 [MOUSE]  click [a text-field]
+0:03:07 [MOUSE]  click [a text-field]
+0:03:08 [KEYS]   keys pressed
+0:03:10 [KEYS]   keys pressed
+0:03:26 [USAGE]  Network saved in file C:\Users\msamiull\workspace\NETPlusPlus\InputIOOBNFiles\GeneratedFiles\MilkMeatCow.oobn
+0:03:27 [MOUSE]  click [com.sun.java.swing.plaf.windows.WindowsIconFactory$FrameButtonIcon@ee7d9f1] "Close" 
+0:03:27 [USAGE]  Object Not Alive Exception
+0:03:27 [WINDOW] focus 'Hugin Researcher 8.4'
+0:03:27 [WINDOW] focus 'Error'
+0:03:30 [MOUSE]  click 'Save my work' 
+0:03:31 [MOUSE]  click 'Save my work' 
+0:03:32 [MOUSE]  click 'Report' 
+0:03:32 [WINDOW] focus 'Bug Report'
+0:03:35 [MOUSE]  click [a text-field]
+0:03:36 [KEYS]   keys pressed
+0:03:37 [KEYS]   keys pressed
+0:03:46 [KEYS]   keys pressed
+0:03:53 [MOUSE]  click 'Send' "Send bug report to hugin.com" 

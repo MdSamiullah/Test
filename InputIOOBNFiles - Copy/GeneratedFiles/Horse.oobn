@@ -1,0 +1,85 @@
+class Horse
+{
+	inputs = (  mare sire);
+	outputs = (  offspring);
+	node_size = ( 80 40  );
+	HR_Desc = "This network describes the class of nodes in a pedigree of horses.  Each instance of the class represents a single animal and the conditional probability distribution over the genotypes aa, aA, and AA.  A sick horse has genotype aa, a carrier of the disease has genotype aA, and a non-carrier has genotype AA.  Each instance of the class has two inputs, namely the distribution over these genotypes for the mother and the distribution over genotypes for the father.  Each instance has one output, namely the distribution over genotypes for the offspring in question." ;
+	HR_Zoom_ZoomFactor = "81" ;
+	HR_Groups_GroupColors = "" ;
+	HR_Groups_GroupNames = "" ;
+	HR_Groups_UserGroupsNo = "0" ;
+	HR_Color_Interface = "21" ;
+	HR_Color_Instance = "0" ;
+	HR_Color_Utility = "36" ;
+	HR_Color_Decision = "17" ;
+	HR_Color_ContinuousChance = "48" ;
+	HR_Color_DiscreteChance = "16" ;
+	HR_Monitor_InitSD = "2" ;
+	HR_Monitor_InitStates = "5" ;
+	HR_Monitor_OpenGraph = "0" ;
+	HR_Monitor_GraphPrecision = "100" ;
+	HR_Monitor_AutoUpdGraph = "0" ;
+	HR_Compile_ApproxEpsilon = "1.0E-5" ;
+	HR_Compile_Approximate = "0" ;
+	HR_Compile_Compress = "1" ;
+	HR_Compile_TriangMethod = "0" ;
+	HR_Propagate_AutoNormal = "1" ;
+	HR_Propagate_AutoSum = "1" ;
+	HR_Propagate_Auto = "1" ;
+	HR_Font_Italic = "0" ;
+	HR_Font_Weight = "400" ;
+	HR_Font_Size = "-12" ;
+	HR_Font_Name = "Arial" ;
+	HR_Grid_GridShow = "0" ;
+	HR_Grid_GridSnap = "1" ;
+	HR_Grid_Y = "40" ;
+	HR_Grid_X = "40" ;
+
+
+	discrete node offspring
+	{
+		label = "";
+		position = ( 160 96 );
+		states = ( "aa" "aA" "AA" );
+		HR_State_2 = "" ;
+		HR_State_1 = "" ;
+		HR_State_0 = "" ;
+		HR_Desc = "This is an output node representing the probability distribution over the genotypes aa, aA, and AA for the offspring of 'mare' and 'sire'." ;
+		HR_Grp = "" ;
+	}
+
+	discrete node sire
+	{
+		label = "";
+		position = ( 96 32 );
+		states = ( "aa" "aA" "AA" );
+		HR_State_2 = "" ;
+		HR_State_1 = "" ;
+		HR_State_0 = "" ;
+		HR_Desc = "This is an input node representing the probability distribution over the genotypes aa, aA, and AA for the father of 'offspring'." ;
+		HR_Grp = "" ;
+	}
+
+	discrete node mare
+	{
+		label = "";
+		position = ( 224 32 );
+		states = ( "aa" "aA" "AA" );
+		HR_State_2 = "" ;
+		HR_State_1 = "" ;
+		HR_State_0 = "" ;
+		HR_Desc = "This is an input node representing the probability distribution over the genotypes aa, aA, and AA for the mother of 'offspring'." ;
+		HR_Grp = "" ;
+	}
+
+
+	potential ( offspring   |  sire mare  )
+	{		data = (  (  ( 1 0 0  )  ( 0.5 0.5 0  )  ( 0 1 0  )  )  (  ( 0.5 0.5 0  )  ( 0.25 0.5 0.25  )  ( 0 0.5 0.5  )  )  (  ( 0 1 0  )  ( 0 0.5 0.5  )  ( 0 0 1  )  )  );
+	}
+	potential ( sire   )
+	{		data = ( 1 1 1  );
+	}
+	potential ( mare   )
+	{		data = ( 1 1 1  );
+	}
+}
